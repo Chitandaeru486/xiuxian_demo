@@ -1,0 +1,28 @@
+; 山海灵境 / first playable observation prototype
+config_version=5
+
+[application]
+config/name="山海灵境 · 观世"
+config/icon="res://assets/icon.svg"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/description="一个正在生长的像素修仙世界。点化灵泉，众生自主修行。"
+
+[display]
+window/size/viewport_width=1440
+window/size/viewport_height=900
+window/size/window_width_override=1440
+window/size/window_height_override=900
+window/size/min_width=1152
+window/size/min_height=720
+window/stretch/mode="canvas_items"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false
+textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0.0784, 0.1765, 0.1804, 1)
+
+[physics]
+common/physics_ticks_per_second=30
