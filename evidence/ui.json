@@ -1,0 +1,65 @@
+{
+	"build": "s1-build.1",
+	"checks": [
+		{
+			"expected": "Pause control and multiplier preserve paused authority",
+			"passed": true
+		},
+		{
+			"expected": "Fixture control refuses use before explicit opt-in",
+			"passed": true
+		},
+		{
+			"expected": "Watched reminder stops authority at exactly minute 100",
+			"passed": true
+		},
+		{
+			"expected": "Graphical session saves a valid manual slot",
+			"passed": true
+		},
+		{
+			"expected": "Existing slot opens overwrite confirmation",
+			"passed": true
+		},
+		{
+			"expected": "Load control restores exact saved state after world replacement",
+			"passed": true
+		},
+		{
+			"expected": "Closing detail leaves reminder pause unchanged",
+			"passed": true
+		},
+		{
+			"expected": "Real viewport capture succeeds",
+			"passed": true
+		}
+	],
+	"engine": {
+		"build": "official",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (official)",
+		"timestamp": 0
+	},
+	"executed_at_utc": "2026-10-29T07:00:40",
+	"limitations": [
+		"Script emits actual connected control signals and invokes UI handlers in a rendered Godot session; no physical mouse automation.",
+		"S1 debug console only; pixel world and full gameplay are outside this stage."
+	],
+	"rules": "s1-rules.1",
+	"scenario_id": "S1-AC23",
+	"screenshot": "res://evidence/s1-console.png",
+	"status": "PASS",
+	"viewport_size": [
+		1440.0,
+		900.0
+	],
+	"window_size": [
+		1440,
+		900
+	]
+}

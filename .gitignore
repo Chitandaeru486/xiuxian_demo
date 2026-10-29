@@ -2,4 +2,7 @@
 .tools/
 builds/
 *.tmp
+.local_saves/
+.acceptance_saves/
+evidence/*_saves/
 evidence/*.log

@@ -1,0 +1,16 @@
+{
+  "executed_at": "2026-10-29T15:01:17.7884858+08:00",
+  "default_scene": "res://scenes/main.tscn",
+  "auxiliary_scene": "res://ui/main.tscn",
+  "game_interface_passed": true,
+  "auxiliary_interface_passed": true,
+  "prior_gd_and_scene_hashes_unchanged": true,
+  "current_project_sha256": "ACCC763DB10ED7065D3C857958429DA48233C53BD763BB66C8AE5D654B0EE7D0",
+  "game_screenshot": "evidence/game-ui-restored.png",
+  "game_log": "evidence/game-ui-restored.log",
+  "auxiliary_log": "evidence/debug-entry-restored.log",
+  "limitations": [
+    "Pixel Demo uses its original simulation; S1 authority is not yet wired to that view.",
+    "Prior 27-scenario summary is historical evidence; only entry and graphical interaction checks were rerun after this configuration change."
+  ]
+}

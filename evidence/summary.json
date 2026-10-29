@@ -1,0 +1,235 @@
+{
+  "build": "s1-build.1",
+  "rules": "s1-rules.1",
+  "spec": "s1-spec.1",
+  "executed_at": "2026-10-29T14:56:42.1769748+08:00",
+  "passed": 27,
+  "failed": 0,
+  "not_run": 0,
+  "scenarios": [
+    {
+      "scenario_id": "S1-AC01",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 5
+    },
+    {
+      "scenario_id": "S1-AC02",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 4
+    },
+    {
+      "scenario_id": "S1-AC03",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 8
+    },
+    {
+      "scenario_id": "S1-AC04",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 5
+    },
+    {
+      "scenario_id": "S1-AC05",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 8
+    },
+    {
+      "scenario_id": "S1-AC06",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 4
+    },
+    {
+      "scenario_id": "S1-AC07",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 10
+    },
+    {
+      "scenario_id": "S1-AC08",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 5
+    },
+    {
+      "scenario_id": "S1-AC09",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 10
+    },
+    {
+      "scenario_id": "S1-AC10",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 8
+    },
+    {
+      "scenario_id": "S1-AC11",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 5
+    },
+    {
+      "scenario_id": "S1-AC12",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 5
+    },
+    {
+      "scenario_id": "S1-AC13",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 5
+    },
+    {
+      "scenario_id": "S1-AC14",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 7
+    },
+    {
+      "scenario_id": "S1-AC15",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 17
+    },
+    {
+      "scenario_id": "S1-AC16",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 9
+    },
+    {
+      "scenario_id": "S1-AC17",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 10
+    },
+    {
+      "scenario_id": "S1-AC18",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 11
+    },
+    {
+      "scenario_id": "S1-AC19",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 14
+    },
+    {
+      "scenario_id": "S1-AC20",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 37
+    },
+    {
+      "scenario_id": "S1-AC21",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 7
+    },
+    {
+      "scenario_id": "S1-AC22",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 6
+    },
+    {
+      "scenario_id": "S1-AC23",
+      "status": "PASS",
+      "evidence": [
+        "ui.json",
+        "ui-small.json"
+      ],
+      "assertions": 16
+    },
+    {
+      "scenario_id": "S1-AC24",
+      "status": "PASS",
+      "evidence": "benchmark.json",
+      "assertions": 36
+    },
+    {
+      "scenario_id": "E01",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 4
+    },
+    {
+      "scenario_id": "E02",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 6
+    },
+    {
+      "scenario_id": "E03",
+      "status": "PASS",
+      "evidence": "acceptance.json",
+      "assertions": 25
+    }
+  ],
+  "source_hashes": [
+    {
+      "file": "core/rules.gd",
+      "sha256": "C52D343C3015CBC595CB78E357971D0FD61C33216B063C95ECE8E952EC023E88"
+    },
+    {
+      "file": "core/save_codec.gd",
+      "sha256": "860E2443041D9B2903EE6B8121CDF699BC2A67600DEE2BDB445133C8E1D3B18E"
+    },
+    {
+      "file": "core/save_store.gd",
+      "sha256": "B32E336B834F89C9B78178D4DBBB8A5D1BFDFFC5AD75F40D40882031361AEAE0"
+    },
+    {
+      "file": "core/world.gd",
+      "sha256": "145B4B71E1CFEEA543AA679E26B7D781D97B80B2F20912EB9A57F75401300173"
+    },
+    {
+      "file": "ui/main.gd",
+      "sha256": "34C89281759B94005FA2DA33A50695FF155A0C4849523CF3B3913F771E9C15A8"
+    },
+    {
+      "file": "ui/main.tscn",
+      "sha256": "501AB378AA284C7CC5E68370DC65582792648CD3611F6127E2E16C175A2AC81F"
+    },
+    {
+      "file": "tests/benchmark.gd",
+      "sha256": "579F0DE1C17A3054F0AB333D4CC7E38799FC05F63287C76ACCC314EE0DDAFA27"
+    },
+    {
+      "file": "tests/test_acceptance.gd",
+      "sha256": "0E1A82C7D60FBC6CEDA38D63E3B33427641A4EFC26DC4F102A100D532462092D"
+    },
+    {
+      "file": "tests/test_core.gd",
+      "sha256": "20527318BCFBE467EAD2622C99C41DDE99E08AEB37C72E374D1D23A81C9B4038"
+    },
+    {
+      "file": "tests/test_cultivation_ui.gd",
+      "sha256": "457564ED7317609DD055700B53B2D0276BB46235D8F705F01C8A6404F3B15BEF"
+    },
+    {
+      "file": "tests/test_cultivation.gd",
+      "sha256": "E159F6C60ABF2F30F103E3290FD3F6D21507D455A14389C410402DC3E93949F8"
+    },
+    {
+      "file": "tests/test_save.gd",
+      "sha256": "56AF551F8817C5F6840B69F11E20BF6E87478490BBCEC257D4050A151426A8A8"
+    },
+    {
+      "file": "tests/test_world.gd",
+      "sha256": "F94477CB0D9D75EEB30B30E9FE8FE985BDF9CEA4A14DE989291E67E6FB44F911"
+    },
+    {
+      "file": "project.godot",
+      "sha256": "80C7CF6BBC12FC0D88337DA166925FC0B3E943256505AD8157A9EF636996AE73"
+    }
+  ],
+  "scope": "S1 foundation and directed fixtures only. Not full gameplay, AI or graphics performance."
+}

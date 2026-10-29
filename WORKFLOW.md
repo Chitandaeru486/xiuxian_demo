@@ -1,6 +1,6 @@
 # 修仙像素沙盒：Vibe Coding 工作流
 
-日期：2026-10-27。配套设计见 design.md。第一轮观察窗口已实现，实际启动与验证结果见 README.md、notes.md；下文保留后续迭代可复用的工作流。
+日期：2026-10-27。配套设计见 ../xiuxian_engine/v1/s1_final/design.md。第一轮观察窗口已实现，实际启动与验证结果见 README.md、notes.md；下文保留后续迭代可复用的工作流。
 
 ## 分工
 
@@ -12,8 +12,8 @@
 
 | 文件 | 用途 |
 | --- | --- |
-| design.md | 玩家体验、范围与技术边界；改变方向时才更新 |
-| plan.md | 开发时创建，只细化当前里程碑的具体任务 |
+| ../xiuxian_engine/v1/s1_final/design.md | 玩家体验、范围与技术边界；改变方向时才更新 |
+| ../xiuxian_engine/v1/s1_final/plan.md | 开发时创建，只细化当前里程碑的具体任务 |
 | notes.md | 开发时创建，记录当前可玩入口、真实结果、问题与下一步 |
 | evidence/ | 开发时创建，保存固定场景的截图、短录屏与性能记录 |
 
@@ -50,7 +50,7 @@ flowchart TD
 ## 给策划角色的提示词
 
 ```text
-阅读 design.md，围绕当前里程碑提出一个可玩的修仙沙盒切片。
+阅读 ../xiuxian_engine/v1/s1_final/design.md，围绕当前里程碑提出一个可玩的修仙沙盒切片。
 本轮目标：[写一个玩家能观察到的体验]。
 输出：玩家操作、世界规则、人物行为、视觉反馈、3 个验收场景。
 说明这些规则如何产生故事，哪里可能无聊或难以理解。
@@ -61,7 +61,7 @@ flowchart TD
 ## 给实现角色的提示词
 
 ```text
-阅读 design.md、当前 plan.md 与 notes.md 中相关内容；不存在的文件不要假定存在。
+阅读 ../xiuxian_engine/v1/s1_final/design.md、当前 ../xiuxian_engine/v1/s1_final/plan.md 与 notes.md 中相关内容；不存在的文件不要假定存在。
 本轮只实现：[当前切片]。
 以工程实际锁定的 Godot 版本为准；不要静默更换引擎或升级依赖。
 先检查相关入口与现有改动，再细化当前任务。

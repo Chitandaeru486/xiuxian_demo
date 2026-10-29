@@ -1,0 +1,1651 @@
+{
+	"build": "s1-build.1",
+	"comparison_exclusions": [],
+	"config": "breakthrough-candidate.2 (candidate, disabled)",
+	"engine": {
+		"build": "official",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (official)",
+		"timestamp": 0
+	},
+	"executed_at": "2026-10-29T06:54:09",
+	"failed_scenarios": 0,
+	"limitations": [
+		"AC23 requires separate graphical evidence from the main agent.",
+		"AC24 is measured by tests/benchmark.gd.",
+		"Direct state edits in malformed-save tests construct adversarial input; fixture APIs create valid directed scenarios."
+	],
+	"rules": "s1-rules.1",
+	"scenarios": [
+		{
+			"assertions": [
+				{
+					"actual": "equal",
+					"expected": "30th day ends at month boundary",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Next minute begins month two",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "360th day ends year one",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "No leap day; year boundary advances once",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Age uses the same minute calendar",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "S1-AC01",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": 1440,
+					"expected": "24 real seconds at 1x yields 1440 minutes",
+					"passed": true
+				},
+				{
+					"actual": 518400,
+					"expected": "24 real seconds at 360x yields 518400 minutes",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Exact equal-duration input yields equal clock and remainder across rates",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Equal world time and commands have equal full business state (only selected clock-rate control normalized)",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "S1-AC02",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": null,
+					"expected": "One second at 1x then one second at 360x yields 21660 minutes",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Integer input slicing preserves complete world state and numerator",
+					"passed": true
+				},
+				{
+					"actual": 21660,
+					"expected": "Changing multiplier preserves prior subminute remainder",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Zero operation budget retains all pending time without skipping",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Later processing consumes retained budget",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Negative delta rejected",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Overflow delta rejected",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Invalid input does not mutate clock or random state",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "S1-AC03",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": "equal",
+					"expected": "Paused input including new multiplier does not accumulate or progress",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-a920499c80e0618aa701a9bd7f47e09f9b36de330ef1eeae0390f8707e3ed601"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Reload restores saved pause and time without offline input",
+					"passed": true
+				}
+			],
+			"limitations": [
+				"Background/focus callbacks and UI return behavior verified separately in graphical runtime, not simulated by this headless API test."
+			],
+			"scenario_id": "S1-AC04",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": null,
+					"expected": "Set directed natural-death boundary",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Set directed natural-death boundary",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Earlier expired person is already dead",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Dead history cannot start a breakthrough",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Phase-one completion extends life before phase-two death",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Completion with insufficient final lifespan still dies",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Earlier dead actor is never revived",
+					"passed": true
+				},
+				{
+					"actual": [
+						"completed",
+						"completed",
+						"died"
+					],
+					"expected": "Completion event precedes same-minute death event",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "S1-AC05",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": null,
+					"expected": "50 original root minus scar 5 is 45",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "100 root and cap lose scar once, both 95",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Promotion retains permanent burn and birth time",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Demotion immediately kills exhausted person without resetting age or burn",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "S1-AC06",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": null,
+					"expected": "Reject malformed duplicate_id",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Malformed duplicate_id preserves active world",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Reject malformed reference",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Malformed reference preserves active world",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Reject malformed realm",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Malformed realm preserves active world",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Reject malformed position",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Malformed position preserves active world",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Death retains history ID without reusing it",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Death events may reference retained dead history",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "S1-AC07",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": "equal",
+					"expected": "Exact resend returns exact recorded result",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Exact resend creates no extra transaction/event or state mutation",
+					"passed": true
+				},
+				{
+					"actual": {
+						"applied_at": 0,
+						"command_id": "idempotent",
+						"error_code": "command_id_conflict",
+						"event_ids": [],
+						"status": "rejected",
+						"transaction_id": ""
+					},
+					"expected": "Same ID with changed payload conflicts",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Conflict retains original record and all state",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "One command produces exactly one atomic transaction/event",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "S1-AC08",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": {
+						"applied_at": 0,
+						"command_id": "denied",
+						"error_code": "permission_denied",
+						"event_ids": [],
+						"status": "rejected",
+						"transaction_id": ""
+					},
+					"expected": "Readable specific rejection permission_denied",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Rejection alters only documented command audit, no business or RNG",
+					"passed": true
+				},
+				{
+					"actual": {
+						"applied_at": 0,
+						"command_id": "bounds",
+						"error_code": "out_of_bounds",
+						"event_ids": [],
+						"status": "rejected",
+						"transaction_id": ""
+					},
+					"expected": "Readable specific rejection out_of_bounds",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Rejection alters only documented command audit, no business or RNG",
+					"passed": true
+				},
+				{
+					"actual": {
+						"applied_at": 0,
+						"command_id": "missing",
+						"error_code": "invalid_entity",
+						"event_ids": [],
+						"status": "rejected",
+						"transaction_id": ""
+					},
+					"expected": "Readable specific rejection invalid_entity",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Rejection alters only documented command audit, no business or RNG",
+					"passed": true
+				},
+				{
+					"actual": {
+						"applied_at": 0,
+						"command_id": "unknown",
+						"error_code": "invalid_command",
+						"event_ids": [],
+						"status": "rejected",
+						"transaction_id": ""
+					},
+					"expected": "Readable specific rejection invalid_command",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Rejection alters only documented command audit, no business or RNG",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Insufficient unreserved resources rejected",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Resource rejection preserves both entities, events and RNG",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "S1-AC09",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": null,
+					"expected": "Injected preparation failure reported",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Preparation failure rolls back all truth and sequence counters",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Injected exception after debit reported",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Mid-transfer rollback restores two balances/events/transactions/counters exactly",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Successful fixture transfer commits",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Successful transfer conserves both balances",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Transfer and event commit once with one sequence",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Posttransaction snapshot is fully valid",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "S1-AC10",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": null,
+					"expected": "Same-minute facts have strict stable commit order",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Notification references its real prior cause",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Independent fact has no invented cause",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Read-only queries do not teach NPCs or change world truth",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "World facts remain separate from NPC knowledge",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "S1-AC11",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": 100,
+					"expected": "Large fast-forward stops exactly at followed reminder minute",
+					"passed": true
+				},
+				{
+					"actual": 518300,
+					"expected": "Event pause explicitly discards remaining request budget",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Preparation reminder does not consume fixture energy",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Continue consumes only pending same-minute work without old fast-forward",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Remaining phase-eight work completes at original minute",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "S1-AC12",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": null,
+					"expected": "Same-minute followed reminders aggregate as two facts before pausing",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Viewing notification details cannot resume simulation",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Manual continue acknowledges entire presented batch",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Redelivery of acknowledged notification does not repeat fact/pause",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "A new attempt creates a new notification and pauses",
+					"passed": true
+				}
+			],
+			"limitations": [
+				"Closing the actual detail control is covered by AC23 GUI evidence; this test checks read-only detail query behavior."
+			],
+			"scenario_id": "S1-AC13",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": null,
+					"expected": "Paused cursor retains unexecuted same-minute phase-eight item",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-d22f75347ea2c071f289571ca6bfaf94551e92535ba957e33a704c00e701ed3b"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Restored cursor resumes exactly the same remaining work",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Resume stays at original minute, emits only remaining event once",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Second continuation does not replay committed facts",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "S1-AC14",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": null,
+					"expected": "Create known valid baseline slot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "injected write permission/space failure",
+						"ok": false
+					},
+					"expected": "Save reports explicit injected write_denied failure",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Old valid slot survives write_denied",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Failed save preserves active world for write_denied",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Load selects valid old slot, never residual temp for write_denied",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "injected write permission/space failure",
+						"ok": false
+					},
+					"expected": "Save reports explicit injected disk_full failure",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Old valid slot survives disk_full",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Failed save preserves active world for disk_full",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Load selects valid old slot, never residual temp for disk_full",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "temporary save validation failed: invalid or truncated JSON",
+						"ok": false
+					},
+					"expected": "Save reports explicit injected truncated failure",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Old valid slot survives truncated",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Failed save preserves active world for truncated",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Load selects valid old slot, never residual temp for truncated",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "injected replacement rename failure",
+						"ok": false
+					},
+					"expected": "Save reports explicit injected replacerenamefail failure",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Old valid slot survives replacerenamefail",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Failed save preserves active world for replacerenamefail",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Load selects valid old slot, never residual temp for replacerenamefail",
+					"passed": true
+				}
+			],
+			"limitations": [
+				"Permission and full-disk failures use deterministic I/O injection; no OS ACL or physical disk exhaustion is performed."
+			],
+			"scenario_id": "S1-AC15",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": null,
+					"expected": "Encode legal int64 fields beyond floating precision",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Disk represents int64 as decimal strings",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Decode exact large and negative integers",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Large seed/state/count/birth/balance and fractional remainder roundtrip exactly",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Out-of-range decimal integer is rejected rather than rounded",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-5dde2d71a60c1f4d7707d15c9fd30cf23ff66d123e579db2541192fc4e05cc2a"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "High random state yields identical actual next random outcome after disk restore",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "S1-AC16",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": null,
+					"expected": "Digest mismatch rejects isolated load",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Digest failure leaves active state and RNG unchanged",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "invalid_entity: wallet",
+						"ok": false
+					},
+					"expected": "negative_balance is rejected during isolated load",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "negative_balance leaves active state and RNG unchanged",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "invalid_entity: wallet",
+						"ok": false
+					},
+					"expected": "over_reserved is rejected during isolated load",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "over_reserved leaves active state and RNG unchanged",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "invalid_entity: followed",
+						"ok": false
+					},
+					"expected": "missing_entity is rejected during isolated load",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "missing_entity leaves active state and RNG unchanged",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "invalid_entity: queue action",
+						"ok": false
+					},
+					"expected": "queue_reference is rejected during isolated load",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "queue_reference leaves active state and RNG unchanged",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "S1-AC17",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": {
+						"error": "incompatible_save: version",
+						"ok": false
+					},
+					"expected": "Unknown format is rejected during isolated load",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Unknown format leaves active state and RNG unchanged",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "incompatible rules version: unknown",
+						"ok": false
+					},
+					"expected": "Unknown rules is rejected during encoding",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Unknown rules leaves active state and RNG unchanged",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "incompatible_save: unknown extension unregistered_v999",
+						"ok": false
+					},
+					"expected": "Unknown extension is rejected during isolated load",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Unknown extension leaves active state and RNG unchanged",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "incompatible_save: unknown action type",
+						"ok": false
+					},
+					"expected": "Unknown action is rejected during isolated load",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Unknown action leaves active state and RNG unchanged",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-6db32471b16cb2d411de6f9f21d3fe9523fa478f5c65ca54191d613b0df2a5a3"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "S1-AC18",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": null,
+					"expected": "Manual slot 1 accepts save",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Manual slot 2 accepts save",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Manual slot 3 accepts save",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Crossing four 30-day boundaries creates four genuine snapshots",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Each autosave captures its actual boundary, not duplicate endpoint",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"saved": 4
+					},
+					"expected": "All four boundary snapshots written with rotation",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Autosave never changes manual slot 1",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Autosave never changes manual slot 2",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Autosave never changes manual slot 3",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Automatic slots retain exactly the latest three distinct boundary dates",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Cancelled/unconfirmed overwrite requires confirmation",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Cancelled overwrite leaves file unchanged",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Discard-unsaved confirmation required",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Unsaved simulated progress is absent when reopening old manual slot",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "S1-AC19",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-c0822f932892a70cd9eb634ec4d835c15730ebd34f124204568ebd8422e55565"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-55a41d330b45faffd956b10446262b1625632fe58ab00b6d30f4d70dc8e79c89"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Continuous and reloaded complete state agree at minute 10",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-175bb36f2952598a3ea5713bb3b2d02ec9cee099007ed41aacd752c09249cc9c"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Continuous and reloaded complete state agree at minute 29",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-6b1a34d9eff1ca543a53863839a463f1653e2d18da937f05f11cdd76f1b2f44d"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Continuous and reloaded complete state agree at minute 30",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-e880ffe279c21897cd59b0cfe3a93f62a2c407a1b915c367f1bf01cb70453cea"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Continuous and reloaded complete state agree at minute 39",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-cd55cc9936b020c645740d7f112d014001dea23f8eb5353a0896cd0ed68df880"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Continuous and reloaded complete state agree at minute 40",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-9d4d228a513a01b745cb93a7fe9387750759300b9cf04333c5f020e60a8ea327"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Continuous and reloaded complete state agree at minute 49",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-623843e2bb2ff0008c8d604ee2d5dbf3c3ba824157b2eec4a5f61bfc237fc7d3"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Continuous and reloaded complete state agree at minute 50",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-eaa522fe3155018c216c91e971f1f1719fd73ab99041c58327ee7258b87e3b65"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Continuous and reloaded complete state agree at minute 60",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Reservation, paid energy and permanent burn do not clear or double",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Daily partial state and polishing history survive every phase checkpoint",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "S1-AC20",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-41f09b5f9fe5c1e374c8e659d474c6fc68bcc91bb638b25c527235e85a89b05a"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Rejected command consumes no random draw",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Replayed applied command does not draw or emit another outcome",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "First actual random completion agrees after reload/rejection/resend",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Three future random outcomes and final RNG state match exactly",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "S1-AC21",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-d4fc3b532cea3447ed440d360c5d9b802493ec52113518288da6eef6be60bd40"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Candidate version/status remain explicit and disabled",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Derived summary and registered future fields roundtrip without exclusions",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Registered future remainder preserved",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "S1-AC22",
+			"status": "PASS"
+		},
+		{
+			"assertions": [],
+			"limitations": [
+				"EXTERNAL: real graphical startup, control actions, screen capture and process evidence are owned by the main agent; no headless pass is claimed."
+			],
+			"scenario_id": "S1-AC23",
+			"status": "NOT_RUN"
+		},
+		{
+			"assertions": [],
+			"limitations": [
+				"EXTERNAL: execute tests/benchmark.gd and inspect evidence/benchmark.json; this acceptance runner does not invent measurements."
+			],
+			"scenario_id": "S1-AC24",
+			"status": "NOT_RUN"
+		},
+		{
+			"assertions": [
+				{
+					"actual": null,
+					"expected": "Pause and switch rate preserve day-ten time",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Resending M1 returns its recorded result",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "M1 resend and query leave complete authority unchanged",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "M1 applies exactly once after day-ten continuation",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "E01",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": null,
+					"expected": "Save event-paused world before process restart",
+					"passed": true
+				},
+				{
+					"actual": {
+						"exit_code": 0,
+						"output": [
+							"Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\r\n\r\n"
+						]
+					},
+					"expected": "Fresh Godot child process loads after a real closed-world delay",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Child snapshot is valid",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Reopened process keeps exact saved time, pause, queue, RNG and notification",
+					"passed": true
+				},
+				{
+					"actual": null,
+					"expected": "Child writes postresume state",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Fresh-process manual continuation executes only uncommitted same-minute work",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "E02",
+			"status": "PASS"
+		},
+		{
+			"assertions": [
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-5de16840def0c352a8f1a040f418796c5f481cde68cf8d50a4e6941297ce9841"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Continuous and restored authority agree at checkpoint 15 including pause/queue/random/events/dedupe",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-51ee09be11c88eac311f67ef31f597562ff9b47caa0b179e24cd503288fd427b"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Continuous and restored authority agree at checkpoint 30 including pause/queue/random/events/dedupe",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-d30b0ab15e0cc88cb2d160840bbdab685e18cb354f1f1366789ff9c2d17a354e"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Continuous and restored authority agree at checkpoint 35 including pause/queue/random/events/dedupe",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-551be7e972f4d301a9ac492ba450da181502b03314552252712f48258e69f41e"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Continuous and restored authority agree at checkpoint 40 including pause/queue/random/events/dedupe",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-c48ee17626484e48abcbdaff5978c0d1093b904530c394ef9ce4e9d74ed6d866"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Continuous and restored authority agree at checkpoint 50 including pause/queue/random/events/dedupe",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true,
+						"path": "D:/a_my_vibe_coding/codex_work/xiuxian-world/.acceptance_saves/run_224304/manual_1.json",
+						"snapshot_id": "snapshot-1befbe2ef0efd4125eba7120326b725dc8af0d294d314ec981d918879874439f"
+					},
+					"expected": "Save writes a verified authoritative snapshot",
+					"passed": true
+				},
+				{
+					"actual": {
+						"error": "",
+						"ok": true
+					},
+					"expected": "Load validates and replaces a fresh candidate world",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Full snapshot equality at save/load boundary; no fields excluded",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Continuous and restored authority agree at checkpoint 65 including pause/queue/random/events/dedupe",
+					"passed": true
+				},
+				{
+					"actual": "equal",
+					"expected": "Final full canonical state and future random result agree; exclusion whitelist is empty",
+					"passed": true
+				}
+			],
+			"limitations": [],
+			"scenario_id": "E03",
+			"status": "PASS"
+		}
+	],
+	"seed": 20261029
+}
